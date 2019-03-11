@@ -28,14 +28,12 @@ class SearchEngine {
     }
 
     List search(String text) {
-        outputDir.listFiles().collect() { new JsonSlurper().parseText(it.text) }.findAll {
-            it.text.toLowerCase().contains(text.toLowerCase())
-        }
+        outputDir.listFiles().collect { new JsonSlurper().parseText(it.text) }
+                .findAll { it.text.toLowerCase().contains(text.toLowerCase()) }
     }
 
     List searchRegEx(String text) {
-        outputDir.listFiles().collect() { new JsonSlurper().parseText(it.text) }.findAll {
-            it.text.toLowerCase().matches("(?s).*"+text.toLowerCase()+".*")
-        }
+        outputDir.listFiles().collect { new JsonSlurper().parseText(it.text) }
+                .findAll { it.text.matches("(?s).*"+text+".*") }
     }
 }

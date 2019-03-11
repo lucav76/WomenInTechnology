@@ -7,10 +7,10 @@ class WikiCrawler {
     // Pure Groovy with regular expressions
     List<String> parseRegEx(String textUrl, int numParagraphs=1) {
         def txt = textUrl.toURL().text
-        def groups = txt =~ "(?s)(<p>.*?</p>)"
+        def groups = txt =~ "(?s)<p>(.*?)</p>"
 
         // Indexes: [group][capture]; usually you want [group][0]
-        return groups.collect() { it[0].replaceAll("&.*?;", "") }.take(numParagraphs)
+        return groups.collect() { it[0] }.take(numParagraphs)
     }
 
     // Recommended in general
@@ -19,7 +19,7 @@ class WikiCrawler {
         def paragraphs = doc.getElementsByTag("p")
 
         return paragraphs.findAll { it.toString().length() > minLenght }.take(numParagraphs)
-                .collect { it.toString().replaceAll("&nbsp;", " ")}
+                .collect { it.toString() }
     }
 
     // Recommended for Wikipedia

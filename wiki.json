@@ -1,0 +1,19 @@
+{
+  "batchcomplete": "",
+  "warnings": {
+    "extracts": {
+      "*": "\"exlimit\" was too large for a whole article extracts request, lowered to 1."
+    }
+  },
+  "query": {
+    "pages": {
+      "24768": {
+        "pageid": 24768,
+        "ns": 0,
+        "title": "Pizza",
+        "extract": "Pizza (Italian: [\u02c8pittsa], Neapolitan: [\u02c8pitts\u0259]) is a savory dish of Italian origin, consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and various other ingredients (anchovies, olives, meat, etc.) baked at a high temperature, traditionally in a  wood-fired oven. In formal settings, like a restaurant, pizza is  eaten with knife and fork, but in casual settings it is cut into wedges to be eaten while held in the hand."
+      }
+    }
+  }
+}
+
